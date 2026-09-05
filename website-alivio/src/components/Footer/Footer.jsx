@@ -1,25 +1,26 @@
 import { footerData } from '@data/Footer/FooterData';
 import "@components/Footer/Footer.css";
 
-const { header, navLinks } = footerData;
-
 export default function Footer() {
+    const { header, navLinks } = footerData;
+    
     return (
-        <>
-          <footer className="footer">
+        <footer className="footer">
             <div className="footer__container">
-                <div className="footer__part">
-                    <h3>{header.text}</h3>
+                <div className="footer__content">
+                    <h3 className="footer__title">{header.text}</h3>
 
-                    <ul>
+                    <ul className="footer__list">
                         {navLinks.map((item, idx) => (
-                            <li key={idx}><a href={item.href}>{item.text}</a></li>
+                            <li key={idx} className="footer__item">
+                                <a href={item.href} className="footer__link">
+                                    {item.text}
+                                </a>
+                            </li>
                         ))}
                     </ul>
                 </div>
             </div>
-          </footer>  
-        </>
+        </footer>  
     );
 }
-

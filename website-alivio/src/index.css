@@ -1,17 +1,58 @@
+@font-face {
+    font-family: "Georgia";
+    src: url("./fonts/Georgia.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 *, *::after, *::before {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-html {
-    box-sizing: inherit;
-}
-
-body {
+html, body {
     padding: 0;
     width: 100%;
     overflow-x: hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, h3 {
+    font-family: "Georgia", serif;
+}
+
+button {
+    font-family: "Lato", sans-serif;
+    font-weight: 600; 
 }

@@ -1,0 +1,200 @@
+.hero-section {
+    width: 100%;
+    position: relative;
+    min-height: 800px;
+    overflow: hidden;
+    background-image: url('@assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.hero-section__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    min-height: 800px;
+}
+
+.hero-section__content {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-section__title {
+    color: #01996D;
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    max-width: 430px;
+}
+
+.hero-section__description {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 400px;
+    color: #000;
+}
+
+.hero-section__button {
+    display: inline-block;
+    background: #01996D;
+    color: #fff;
+    padding: 25px 60px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.15s ease;
+    width: fit-content;
+}
+
+.hero-section__button:hover {
+    background: #017a57;
+}
+
+.hero-section__button:active {
+    transform: scale(0.95);
+}
+
+/* Адаптив для планшетов */
+
+@media (max-width: 1024px) {
+    .hero-section {
+        min-height: 650px;
+        background-position: right 5% center;
+    }
+
+    .hero-section__container {
+        min-height: 650px;
+    }
+
+    .hero-section__content {
+        top: 150px;
+        left: 80px;
+        gap: 15px;
+    }
+
+    .hero-section__title {
+        font-size: 2.8em;
+        max-width: 380px;
+    }
+
+    .hero-section__description {
+        font-size: 1em;
+        max-width: 350px;
+    }
+
+    .hero-section__button {
+        padding: 20px 50px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        background-image: none;
+    }
+
+    .hero-section__container {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-section__content {
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 40px 30px;
+        z-index: 2;
+        order: 1;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-section__title {
+        font-size: 2.2em;
+        max-width: 100%;
+    }
+
+    .hero-section__description {
+        font-size: 0.95em;
+        max-width: 100%;
+    }
+
+    .hero-section__button {
+        padding: 18px 40px;
+        font-size: 1em;
+    }
+
+    .hero-section::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 400px;
+        background-image: url('@assets/images/hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        order: 2;
+    }
+}
+
+/* Адаптив для телефонов */
+
+@media (max-width: 480px) {
+    .hero-section__content {
+        padding: 30px 20px;
+        gap: 12px;
+    }
+
+    .hero-section__title {
+        font-size: 1.8em;
+    }
+
+    .hero-section__description {
+        font-size: 0.9em;
+    }
+
+    .hero-section__button {
+        padding: 16px 30px;
+        font-size: 0.95em;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .hero-section::after {
+        height: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-section__content {
+        padding: 20px 15px;
+    }
+
+    .hero-section__title {
+        font-size: 1.5em;
+    }
+
+    .hero-section__description {
+        font-size: 0.85em;
+    }
+
+    .hero-section::after {
+        height: 250px;
+    }
+}

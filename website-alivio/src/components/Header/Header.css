@@ -1,103 +1,140 @@
 .header {
     width: 100%;
-    height: 900px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header__container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
-    padding-top: 20px;
 }
 
 .header__top {
-    padding: 0 150px;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header__logo a {
+.header__logo-link {
     color: #01996D;
     text-decoration: none;
+    font-family: "Georgia";
     font-size: 1.2em;
+    font-weight: 600;
 }
 
-.menu ul {
+.header__nav {
     display: flex;
-    gap: 80px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
 }
 
-.menu ul li {
+.header__menu {
+    display: flex;
+    gap: 60px;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.menu ul li a {
+.header__menu-link {
     text-decoration: none;
-    color:black;
-    font-size: 1.2em;
+    color: #000;
+    transition: opacity 0.3s ease;
 }
 
-.auth-buttons {
+.header__menu-link:hover {
+    opacity: 0.7;
+}
+
+.header__auth {
     display: flex;
-    gap: 50px;
+    gap: 30px;
+    align-items: center;
 }
 
-.btn-text {
-    font-size: 1.2em;
+.header__auth-btn {
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: opacity 0.3s ease, transform 0.15s ease;
+    cursor: pointer;
+}
+
+.header__auth-btn:active {
+    transform: scale(0.95);
+}
+
+.header__auth-btn--text {
     background: transparent;
     border: none;
+    color: #000;
 }
 
-.btn-text a {
-    text-decoration: none;
-    color: black;
-}
- 
-.btn-primary {
-    font-size: 1.2em;    
-    width: 180px;
-    height: 50px;
+.header__auth-btn--primary {
+    width: 160px;
+    height: 48px;
     background: #01996D;
     border: none;
     border-radius: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn-primary a {
-    text-decoration: none;
-    color: white;
+.header__auth-btn--primary:hover {
+    background: #017a57;
 }
 
-.hero h1 {
-    position: absolute;
-    top: 300px;
-    left: 150px;
-    z-index: 2;
-    max-width: 430px;
-    color: #01996D;
-    font-size: 3.5em;
+.header__bottom {
+    width: 100%;
 }
 
-.hero p {
-    position: absolute;
-    top: 470px;
-    left: 150px;
-    z-index: 2;
-    max-width: 400px;
-    font-size: 1.1em;
-    line-height: 1.5;
+/* Адаптив для планшетов */
+
+@media (max-width: 1024px) {
+    .header__menu {
+        gap: 30px;
+    }
+
+    .header__auth {
+        gap: 20px;
+    }
+
+    .header__auth-btn--primary {
+        width: 140px;
+        height: 44px;
+    }
 }
 
-.hero .btn {
-    position: absolute;
-    top: 600px;
-    left: 150px;
-    z-index: 2;
-    background: #01996D;
-    color: white;
-    padding: 25px 60px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
+
+@media (max-width: 768px) {
+    .header__top {
+        height: 80px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__auth {
+        display: none;
+    }
+}
+
+/* Адаптив для телефонов */
+
+@media (max-width: 480px) {
+    .header__top {
+        height: 70px;
+    }
+
+    .header__logo-link {
+        font-size: 1em;
+    }
 }

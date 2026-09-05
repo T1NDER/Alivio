@@ -1,4 +1,4 @@
-export const howItWorksData = {
+export const worksData = {
   header: {
     subtitle: "How it works",
     title: "Understand & Release the stress in 3 steps",

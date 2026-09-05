@@ -1,78 +1,52 @@
-import { headerData, heroData } from '@data/Header/HeaderData';
+import { headerData } from '@data/Header/HeaderData';
+import Hero from '@components/Header/Hero/Hero';
+import BurgerMenu from '@components/Header/BurgerMenu/BurgerMenu';
 import "@components/Header/Header.css";
 
-const { logo, navLinks, authButtons } = headerData;
-
 export default function Header() {
+    const { logo, navLinks, authButtons } = headerData;
+
     return (
         <header className="header">
-            <div className="container">
+            <div className="header__container">
                 <div className="header__top">
-                    <Logo/>
-                    <Menu/>
-                    <AuthButtons authButtons={authButtons}/>
+                    <div className="header__logo">
+                        <a href={logo.href} className="header__logo-link">
+                            {logo.text}
+                        </a>
+                    </div>
+
+                    <nav className="header__nav">
+                        <ul className="header__menu">
+                            {navLinks.map(item => (
+                                <li key={item.href} className="header__menu-item">
+                                    <a href={item.href} className="header__menu-link">
+                                        {item.text}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <div className="header__auth">
+                        {Object.values(authButtons).map((btn) => (
+                            <a
+                                key={btn.href}
+                                href={btn.href}
+                                className={`header__auth-btn ${btn.variant === 'primary' ? 'header__auth-btn--primary' : 'header__auth-btn--text'}`}
+                            >
+                                {btn.text}
+                            </a>
+                        ))}
+                    </div>
+
+                    <BurgerMenu navLinks={navLinks} />
                 </div>
 
                 <div className="header__bottom">
-                    <Hero/>
+                    <Hero />
                 </div>
             </div>
         </header>
     );
-}
-
-function Logo() {
-    return (
-        <div className="header__logo">
-            <a href={logo.href}>{logo.text}</a>
-        </div>
-    );
-}
-
-function Menu() {
-    return (
-        <nav className="menu">
-            <ul>
-                {navLinks.map(item => (
-                    <MenuItem key={item.href} text={item.text} href={item.href} />
-                ))}
-            </ul>
-        </nav>
-    );
-}
-
-function MenuItem({ text, href }) {
-    return <li><a href={href}>{text}</a></li>
-}
-
-function AuthButtons({ authButtons }) {
-    return (
-        <div className="auth-buttons">
-            {Object.values(authButtons).map((btn) => (
-                <AuthButton key={btn.href} {...btn} />
-            ))}
-        </div>
-    );
-}
-
-function AuthButton({ text, href, variant }) {
-    return (
-        <button className={variant === 'primary' ? 'btn-primary' : 'btn-text'}>
-            <a href={href}>{text}</a>
-        </button>
-    );
-}
-
-
-function Hero() {
-    const { title, description, button, image} = heroData;
-   
-    return (
-        <section className="hero">
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <a href={button.href} className="btn">{button.text}</a>
-        <img src={image.src} alt={image.alt} />
-        </section>
-  );
 }

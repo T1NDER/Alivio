@@ -1,13 +1,13 @@
-import HowItWorksData from '@components/section/HotItWorksSection/HotItWorksSection';
-import HeroSection from '@components/section/HeroSection/HeroSection';
-import DescriptionProductSection from '@components/section/DescriptionProductSection/DescriptionProductSection';
+import WorksSection from "@componentsSections/WorksSection/WorksSection";
+import SuccessStorySection from "@componentsSections/SuccessStory/SuccessStory";
+import DescriptionSection from "@componentsSections/DescriptionSection/DescriptionSection";
 
 export default function Main() {
     return (
-        <main>
-            <HowItWorksData/>
-            <HeroSection/>
-            <DescriptionProductSection/>
+        <main className="main">
+            <WorksSection/>
+            <SuccessStorySection/>
+            <DescriptionSection/>
         </main>
     );
 }
