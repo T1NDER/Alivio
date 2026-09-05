@@ -29,7 +29,7 @@
 ```bash
 # 1. Клонируйте репозиторий
 git clone https://github.com/T1NDER/WisdomHub.git
-cd ai-website
+cd website-alivio
 
 # 2. Установите зависимости
 npm install
@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-P.S: Для более удобного просмотра сайта предоставлена ссылка на GitHub Pages: 🔗[GitHub](https://t1nder.github.io/WH/)
+P.S: Для более удобного просмотра сайта предоставлена ссылка на GitHub Pages: 🔗[GitHub](https://t1nder.github.io/Alivio/)
 
 ### 📌 Примечание
 Проект является учебным и предназначен для демонстрации навыков работы с React и Vite.
